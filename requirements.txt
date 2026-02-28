@@ -1,0 +1,8 @@
+# Core
+openai>=1.30.0          # embeddings (text-embedding-3-small) + chat (gpt-4o-mini)
+chromadb>=0.5.0         # vector store (persistent HNSW, cosine similarity)
+python-dotenv>=1.0.0    # .env loading
+
+# Fallback (offline / no API key)
+# chromadb's DefaultEmbeddingFunction bundles all-MiniLM-L6-v2 via ONNX
+# — activates automatically when OPENAI_API_KEY is not set, no extra install needed
