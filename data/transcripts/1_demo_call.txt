@@ -1,0 +1,121 @@
+[00:00] AE (Jordan):  Good morning, Priya!  Appreciate you carving out a full hour.  How’s the quarter treating you so far?
+
+[00:05] Prospect (Priya – RevOps Director):  Hey Jordan.  Busy as always—pipeline is healthy, but I’m drowning in call recordings.
+
+[00:11] AE:  Totally hear that.  Before we jump in, quick agenda check: I’ll recap what we learned on our discovery email thread, Luis will run a live product demo, then we’ll map next steps.  Sound good?
+
+[00:21] Prospect:  Perfect.
+
+[00:23] AE:  Great.  From our emails, your reps use ZoomInfo for contact discovery, Outreach for sequencing, and Salesforce as the CRM.  You record ~500 calls a week but only manually review 5 %.  Primary pains you flagged were: 1) slow onboarding of new AEs, 2) lack of structured insight for coaching, and 3) no way to surface buying signals automatically.  Did I miss anything?
+
+[00:45] Prospect:  That’s accurate.  Also, sales leadership wants a “single pane” where they see risk on every opp without scrubbing hour-long calls.
+
+[00:55] AE:  Awesome.  That lines up exactly with what our AI Copilot solves.  Quick intro—Luis is our Sales Engineer and ex-AE.  He’ll share screen now.
+
+[01:05] SE (Luis):  Thanks Jordan.  Priya, can you see my browser?
+
+[01:07] Prospect:  Yup, clear.
+
+[01:09] SE:  Cool.  Let’s start with the dashboard.  These tiles show total calls ingested, adoption by rep, and “deal health” on the right.  Each health score is computed via a regression on verbal cues—next steps, pricing talk, risk phrases like “budget freeze,” etc.
+
+[01:26] Prospect:  Interesting.  How fresh is this data?
+
+[01:28] SE:  Near-real-time.  We process calls within five minutes of Zoom ending.  Under the hood we chunk the raw transcript into 256-token blocks, embed with OpenAI’s `text-embedding-3-small`, store in a FAISS index, then run retrieval-augmented prompts in GPT-4o for summary and risk classification.  You can set the SLA down to one minute if you push calls over webhooks.
+
+[01:49] AE:  Priya, which piece of the workflow do you want to zoom in on first—onboarding or coaching?
+
+[01:55] Prospect:  Coaching, please.  My managers waste evenings scrubbing calls.
+
+[01:58] SE:  Sure.  I’ll filter to “Negotiation” stage deals.  Here’s an opp where the prospect asked for a 20 % discount.  Let’s click “AI summary.”
+
+[02:07] SE (reads on-screen):  *“Call summary: Prospect requested 20 % volume discount, concerned about onboarding cost.  Rep positioned value vs. Competitor X, committed to follow-up with ROI deck.  Next steps: provide updated quote, schedule technical review with SecOps.”*
+
+[02:19] Prospect:  Does that summary auto-generate action items?
+
+[02:22] SE:  Yup—see these checkboxes.  They sync to Salesforce tasks.  Managers can coach reps on whether the next step is clear and time-bound.
+
+[02:30] AE:  We find that reduces deal slippage by ~12 % in the first quarter of usage.
+
+[02:35] Prospect:  Impressive.  How accurate are the speaker diarization segments?  Our calls often have three or four people.
+
+[02:41] SE:  We use Zoom speaker IDs when present; otherwise we run a lightweight diarizer fine-tuned on B2B call audio.  With three speakers we’re at 93 % word-level accuracy.  You can always correct labels and feed them back into model fine-tuning.
+
+[02:54] Prospect:  Nice.  Now, show me how a rep actually finds insights without scrolling.
+
+[02:59] SE:  Let’s pop open the Copilot chat on the right.  I’ll type “What objections did the prospect raise about integration?”  *hits enter*  You’ll see the answer cites two timestamps: *“[12:45] Prospect: We need Okta SSO”* and *“[14:07] Prospect: Concerned about sandbox support.”*
+
+[03:17] Prospect:  That’s exactly what we need.  Today, reps guess.
+
+[03:20] AE:  Imagine pairing that with auto-generated follow-up emails.  Reps get a draft that embeds those objections and responses.
+
+[03:27] Prospect:  Love it.  Switching gears, how does onboarding look?
+
+[03:31] SE:  For onboarding we have a “Top Calls” playlist.  New reps watch five curated clips with commentary.  Let me show a clip flagged as a textbook discovery.
+
+[03:41] Audio plays:  *“What are your revenue KPIs for 2025?”*
+
+[03:44] Prospect (smiling):  That beats our haphazard SharePoint links.
+
+[03:48] AE:  Now to adoption.  Standard roll-out is 25 seats across three pods.  We integrate with your Zoom, Salesforce, and Slack.  IT signs off on a read-only OAuth to Salesforce, no custom package.
+
+[03:59] Prospect:  Any professional services required?
+
+[04:01] AE:  Not for pilot.  CS walks your admin through set-up in under an hour.
+
+[04:06] Prospect:  OK.  Let’s talk data security before I pitch leadership.
+
+[04:10] AE:  Absolutely.  We’re SOC 2 Type II, ISO 27001 certified, and do not store raw audio past 30 days unless you override.  Transcripts live in your VPC-isolated S3 bucket; vectors in Dynamo or Postgres—your call.  For Europe we support in-region storage.
+
+[04:27] Prospect:  Perfect.  We’re India-based but expand to EU next year, so regionality matters.
+
+[04:32] SE:  Our roadmap includes `ap-south-1` and `eu-central-1` deployments next quarter.
+
+[04:37] Prospect:  Good.  Next, cost: how is pricing structured?
+
+[04:41] AE:  List price is ₹1 800 per user per month, billed annually.  Pilot discount of 20 % for 25 seats.  After 90 days, you either roll to full list or negotiate multi-year.
+
+[04:53] Prospect:  Competitive with Brightcall.  Do you bundle AI minutes?
+
+[04:57] AE:  Each seat includes 5 000 AI minutes monthly; overage at ₹0.70 per minute.
+
+[05:03] Prospect:  I’ll need that in writing.
+
+[05:05] AE:  Of course—order form and rate card to follow.  Any other feature demos you want to see?
+
+[05:10] Prospect:  Actually, show me multilingual support.  Our reps do Hindi and English mix.
+
+[05:15] SE:  Great point.  I’ve queued a Hindi-heavy call from yesterday.  Watch Copilot switch context.  *plays clip*  Notice the summary—both languages present with inline translation.
+
+[05:27] Prospect:  That’s slick.  Accuracy good?
+
+[05:29] SE:  92 % BLEU vs. human translation on a 100-call test set.
+
+[05:34] Prospect:  Acceptable.  What’s next if we pilot?
+
+[05:38] AE:  Step 1: Security review.  Step 2: 25-seat trial order form and DPA.  Step 3: Kick-off call with CS.  Target go-live date?
+
+[05:46] Prospect:  July 1st, if IT signs off this month.
+
+[05:49] AE:  Works.  Luis, capture action items?
+
+[05:52] SE:  Sure.  *Types in CRM*  Security white-paper by EOD, draft order form, schedule CS kick-off.
+
+[05:57] Prospect:  Before we wrap, can your model detect when a competitor is mentioned?
+
+[06:01] SE:  Yes.  We have an NER head trained on a 50-vendor dictionary.  Competitor mentions raise a “battle-card reminder.”  Let’s search for “Competitor Y” across your calls—there are 18.  Clicking in, you see context sentences.
+
+[06:17] Prospect:  Super helpful.
+
+[06:19] AE:  Anything else you’d like?
+
+[06:21] Prospect:  No, this is thorough.  Send over the docs; I’ll line up our SecOps lead for next week.
+
+[06:26] AE:  Great.  Quick recap—security white-paper, pilot pricing at 20 % off, order form, target July 1.  Luis, anything to add?
+
+[06:33] SE:  That covers it.
+
+[06:35] Prospect:  Thanks both—impressive demo.
+
+[06:37] AE:  Pleasure, Priya.  Talk soon!
+
+

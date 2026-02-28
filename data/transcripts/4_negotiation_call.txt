@@ -1,0 +1,105 @@
+[00:00] AE (Jordan):  Hi everyone—great to see a full house for what we hope is the final stretch.  On our side: I’m Jordan, Maya is back from Pricing, Elena from Security for any last clarifications, and our VP of Customer Success, Asha, in case onboarding timelines come up.  
+[00:15] AE:  From your side I see Neha from Procurement, Raghav your CFO, Sara from Legal, Priya from RevOps, and Arjun from Security.  Did I miss anyone?  
+[00:24] Prospect (Neha – Procurement):  That’s everyone, thanks Jordan.  Let’s get this wrapped.  
+[00:28] AE:  Agenda in three parts: (1) confirm commercial terms, (2) legal redlines and SLA language, (3) sign-off path and timing.  We’ve blocked 75 minutes.  We can finish sooner if decisions fall quickly.  Sound good?  
+[00:42] Prospect (Raghav – CFO):  Works.  I have another meeting at the top of the hour, so let’s keep pricing crisp.  
+[00:49] AE:  Will do.  Quick recap of where we stand as of yesterday’s draft quote:  
+
+• Seats: **120** total—96 Growth, 24 Pro.  
+• Term: **3 years** commencing 1 July 2025.  
+• Net discount: **20 %** stacked (logo + volume + term).  
+• Renewal uplift cap: **4 %**.  
+• Dedicated CSM included for years 1-3.  
+• 99.9 % SLA with 10 % monthly service-credit after 30 min cumulative downtime.  
+• Early-termination option after year 1 with clawback of free pilot months.  
+
+Did I miss or misstate anything?  
+[01:26] Prospect (Neha):  Renewal uplift reads 4 % cap in the PDF, but in the Word doc it still says 5 %.  Need that reconciled.  
+[01:34] Maya (Pricing):  Good catch—I’ll update the body to 4 % before we DocuSign.  
+[01:39] Prospect (Raghav):  Bigger picture: with that discount, total contract value is ₹6 crore 77 lakh over 36 months, correct?  
+[01:47] Maya:  Correct—₹2 crore 25 lakh per year, invoiced annually in advance.  
+[01:52] Prospect (Raghav):  Cash-flow wise we’d like net-30 terms, not net-15.  
+[01:55] AE:  Understood.  We can stretch to **net-30** if payment is electronic transfer.  
+[02:01] Prospect (Raghav):  Works.  Any finance surcharge?  
+[02:03] Maya:  None.  
+[02:05] Prospect (Neha):  Next—price-per-seat breakdown?  Finance wants visibility.  
+[02:09] Maya:  Growth seats list at ₹1 800 monthly → ₹1 440 after discount.  Pro seats list ₹2 400 → ₹1 920 after discount.  Line items in Annex A reflect both.  
+[02:20] Prospect (Neha):  Good.  CFO also requested a blended-rate sheet.  
+[02:24] Maya:  That’s ₹1 563 per seat blended.  I’ll include that.  
+[02:29] Prospect (Sara – Legal):  Jumping to contract redlines: we red-marked three clauses—governing law, limitation of liability, and intellectual-property indemnity.  
+[02:38] AE:  Let’s tackle those one at a time.  Governing law: we default to State of Delaware.  You propose Karnataka courts.  Elena, any corporate stance?  
+[02:49] Elena (CISO):  Delaware is preferred but we can accept Indian jurisdiction if arbitration seat is Singapore.  
+[02:57] Prospect (Sara):  Arbitration in Singapore works.  
+[02:59] AE:  Noted—will revise.  Liability cap: you requested 2× TCV; legal approved 1× TCV plus uncapped for IP and data-breach.  
+[03:09] Prospect (Sara):  Fair.  We can live with 1×, provided data-breach carve-out is uncapped.  
+[03:15] AE:  Agreed.  IP indemnity: we inserted standard industry language; you asked for defense-and-settle obligations.  We’re fine with that; we do prefer to control settlement amount.  
+[03:25] Prospect (Sara):  Acceptable if “not unreasonable withheld” clause is added.  
+[03:29] AE:  Done.  Anything else legal?  
+[03:31] Prospect (Sara):  Data-processing addendum: add India DPDPA Annex besides GDPR SCC.  
+[03:35] AE:  Elena has prepared that; we’ll attach.  
+[03:39] Prospect (Arjun – Security):  SLA credit calculation: is it 10 % of **month’s** fee or prorated per hour?  
+[03:45] AE:  10 % of monthly recurring fee if downtime >30 minutes aggregate per month.  Over 2 hours, credit escalates to 25 %.  
+[03:54] Prospect (Arjun):  Document currently says “exceeds 120 minutes in a quarter.”  Please tweak.  
+[03:58] Maya:  Will fix to monthly with step-ladder at 30 min and 120 min.  
+[04:05] Prospect (Priya – RevOps):  Operational: we need Slack push notifications Day 1 and Hindi diarization GA by 30 Oct 2025.  Your SLR covers it but we want explicit penalty: 15 % SLA credit if feature slips.  
+[04:18] AE:  We previously offered 10 %.  Maya?  
+[04:20] Maya:  I can authorize 12 %.  15 % exceeds policy.  
+[04:23] Prospect (Priya):  Let’s meet in the middle at 13 %.  
+[04:26] AE:  Approved—13 % feature-slip credit.  Done.  
+[04:30] Prospect (Neha):  Contract mgmt: we run DocuSign countersign within 24 hrs.  We need your signature same day or pricing resets to CFO’s FX table.  
+[04:38] AE:  Understood.  As long as we get green light today, we can countersign within 2 hrs.  
+[04:44] Prospect (Neha):  Perfect.  Next: We require a **Most-Favored-Nation** clause if you drop list price more than 15 % in India for equal volume.  
+[04:53] AE:  We cannot provide full MFN.  Alternative: we notify you of list changes and you can reopen pricing if difference exceeds 20 %.  
+[05:03] Prospect (Raghav):  Make it 18 % and we’re fine.  
+[05:07] AE:  Maya?  
+[05:08] Maya:  18 % MFN trigger accepted.  
+[05:11] Prospect (Neha):  Renewal CPI cap?  Document says lesser of 4 % or CPI.  We want CPI cap at 6 % max.  
+[05:20] AE:  Reasonable.  We’ll clarify “capped at 4 %, and in no event shall CPI adjustment exceed 6 %.”  
+[05:27] Prospect (Neha):  Good.  Payment currency?  INR preferred.  
+[05:31] Maya:  Contract denominated in INR, no FX adjustments.  
+[05:34] Prospect (Raghav):  Excellent.  Next: training credits—do we get any onsite enablement?  
+[05:39] Asha (VP CS):  We include two 3-hour virtual enablement sessions.  Onsite optional at ₹2 lakh per day plus travel.  For deals over ₹5 crore we waive one onsite day.  You’re at ₹6.77 crore—so one onsite day free.  
+[05:53] Prospect (Priya):  Perfect.  Schedule Q3.  
+[05:57] AE:  Logging these.  Seat ramp: we discussed adding 20 seats in year 2.  Renewal clause states we’ll bill for any seat usage above 120 with 30-day true-up.  
+[06:08] Prospect (Priya):  Acceptable.  Just ensure we get co-terminated renewal dates.  
+[06:12] AE:  Co-term OK.  
+[06:14] Prospect (Sara):  Data-deletion SLA: draft says 30 days for DSR; can we guarantee 15 days?  
+[06:20] Elena:  Our standard is 30.  We can shoot for 15 best-effort but commit to 30 contractually.  
+[06:27] Prospect (Sara):  We need contractual 15.  
+[06:29] Elena:  I can do 21 days hard SLA, 30 days remedy credit.  
+[06:34] Prospect (Sara):  Split the diff—21 contractual is okay if credit is 15 % of monthly.  
+[06:39] AE:  Approved.  Credit aligns with feature-slip credit.  
+[06:44] Prospect (Arjun):  Pentest: annual?  
+[06:46] Elena:  Yes, third-party NCC Group annually, plus continuous Bugcrowd.  
+[06:50] Prospect (Arjun):  Provide report summary each cycle.  
+[06:52] Elena:  Agreed.  
+[06:53] Prospect (Raghav):  I’m satisfied on security.  So price is locked at ₹6.77 crore TCV, net-30, MFN 18 %, SLA monthly, feature-slip 13 %, onboarding free onsite day, governing law India w/ Singapore arbitration, termination after year 1 with clawback.  Correct?  
+[07:12] AE:  Correct.  Let’s draft final contract.  Maya can push updated PDF in 45 min.  We’ll hold a mutual execution call at 4:00 PM IST today.  
+[07:22] Prospect (Neha):  Works.  Please insert our PO number on invoice: PO-45267.  
+[07:27] Maya:  Got it.  
+[07:29] Prospective (Raghav):  Alright, I need to drop.  Priya and Neha will close the loop.  
+[07:33] AE:  Thank you, Raghav.  We appreciate the partnership.  
+[07:36] Prospect (Raghav):  Likewise, looking forward.  *leaves meeting*  
+[07:40] Prospect (Neha):  Last housekeeping: MSA effective date is signature date, correct?  
+[07:44] AE:  Yes.  
+[07:46] Prospect (Neha):  And Service Credit is issued as invoice credit, not cash refund?  
+[07:50] Maya:  Correct—credit applied to next invoice.  
+[07:53] Prospect (Neha):  Perfect.  Priya, any RevOps blockers?  
+[07:56] Prospect (Priya):  None—just need user-provisioning guide and sandbox by July 1.  
+[08:01] Asha:  CS will open sandbox 48 hrs after signature and share SCIM guide.  
+[08:07] Prospect (Arjun):  Security doc package link please.  
+[08:10] Elena:  Will send post-call.  
+[08:12] AE:  Team, any final concerns?  
+[08:14] Prospect (Sara):  All good here.  
+[08:16] AE:  Great.  Action items:  
+
+1. Maya updates quote and contract (45 min).  
+2. Elena sends security package (30 min).  
+3. AE to schedule 4:00 PM IST DocuSign call.  
+4. Asha prepares onboarding checklist & sandbox.  
+
+If all align, we’ll mark CLOSED-WON today.  
+[08:32] Prospect (Neha):  Let’s get it done.  Thanks all.  
+[08:34] *Call ends.*
+
+

@@ -1,0 +1,119 @@
+[00:00] AE (Jordan):  Good afternoon, team.  Thanks for hopping on.  I’ve got Priya back from RevOps, Dan from Finance, and Maya, our pricing strategist, on our side.  Goal today is to dig into SKUs, discount structure, and how we compare to Competitor X and Competitor Y.  We’ve booked 90 minutes but can finish sooner if we stay tight.  Sound okay?
+
+[00:19] Prospect (Priya – RevOps Director):  Works for me, Jordan.
+
+[00:21] Prospect (Dan – Finance VP):  Same here.  I have a hard stop at half past, but I trust Priya to finish if we run long.
+
+[00:29] AE:  Perfect.  Quick recap from last week’s demo: we aligned on a 25-seat pilot, saw the AI summaries and coaching features, and identified security questions which Luis is addressing.  Today is purely commercial.  Maya, would you run through our price card at list before we dive into discounts?
+
+[00:48] Maya (Pricing Strategist):  Sure.  At list, we have three SKUs:
+
+  • Growth — ₹1 800/user/mo, billed annually, includes 5 000 AI minutes.  
+  • Pro — ₹2 400/user/mo, adds advanced battle-card triggers, Slack push, and SOC 2 Type II report.  
+  • Enterprise — ₹2 950/user/mo, unlimited AI minutes, multilingual diarization, dedicated CSM, plus 99.9 % SLA.
+
+We assume 80 % of your reps fit Growth, 20 % need Pro features.  No Enterprise for pilot, though you can upgrade any time.
+
+[01:24] Prospect (Dan):  Got it.  First question: Competitor X quoted us a flat ₹1 500 per seat with “unlimited minutes” and said they include Slack push.  How is your Growth tier higher yet minutes limited?
+
+[01:39] AE:  Great question.  Competitor X bundles minutes but throttles after 500 calls per seat—a soft cap that triggers slower processing.  We give 5 000 AI minutes which equates to ~83 hours of call audio monthly per rep; any overage is ₹0.75/min, so heavy users pay as they scale.  For Slack, we ship that next sprint, but you get it during pilot via early-access toggle.  Important difference: we include redaction, auto-PII masking, and EU In-Region hosting at Growth; Competitor X sells that as a 30 % add-on.  Happy to share a TCO model.
+
+[02:13] Prospect (Priya):  TCO would be helpful.  Dan’s CFO wants apples-to-apples numbers.
+
+[02:19] Maya:  We’ve prepared a side-by-side with seat counts from 25 to 250 over a three-year horizon, factoring minute overages.  If you look at tab two, you’ll see Competitor X spikes 18 % in year 2 after you exceed 50 k monthly minutes; we remain flat except CPI uplift.
+
+[02:36] Prospect (Dan):  I see it.  Their overage is hidden in a usage line item.  Okay.
+
+[02:43] AE:  Before we drown in spreadsheets, let’s confirm license mix.  Current live sellers is 95, plus 15 BDRs, correct?
+
+[02:52] Prospect (Priya):  We forecast 110 live seats Q1 next fiscal, scaling to 140 by Q3.
+
+[02:58] AE:  So pilot 25 seats across two pods, then if success, full rollout 110.  Works for me.  Maya, can you outline standard discount paths?
+
+[03:07] Maya:  Sure.  We have three levers:
+
+  1. **Logo discount**: 8 % for pilots, 12 % if public case study.  
+  2. **Volume**: 5 % off list once you exceed 100 seats, 10 % past 200.  
+  3. **Term**: 5 % for two-year, 8 % for three-year commitments.
+
+Stacking cap is 18 %.  For a 3-year, 110-seat commitment, we can get you 18 % off list.  Pilot seats carry the discount forward.
+
+[03:39] Prospect (Dan):  Competitor Y is offering 15 % off list on a 2-year, 60-seat commit, plus a mid-contract opt-out.  They also bundle support at no extra cost.  Can you match?
+
+[03:52] AE:  We’ll break this into pieces.  Support: our Growth and Pro include standard support (4-hour response).  Dedicated CSM is part of Enterprise or an add-on at ₹200/seat/yr.  For the trial you’ll get dedicated CSM free.  On opt-out, we can add a year-2 exit clause if you prepay year 1.  Discount: our multi-year uplift is capped at 5 %.  Competitor Y starts low then increases 10 % annually.  Net three-year TCO is still lower with us.  I can work with Maya on a conditional uplift cap if needed.
+
+[04:25] Prospect (Priya):  Dan, we need a three-year anyway to align with our CRM contract cycle.
+
+[04:30] Prospect (Dan):  That’s fair.  I’m more concerned about budget recognition.  If we prepay, can revenue be recognized ratably?
+
+[04:38] Maya:  Absolutely.  We generate separate invoice schedules.  You can pay annual lumps or quarterly at no extra cost.
+
+[04:46] AE:  Let’s also highlight competitor feature gaps.  Competitor Y doesn’t auto-redact PII, so legal flagged it last time I saw them.  Competitor X uses their own LLM fine-tuned on call data, with ~82 % precision on action items vs. our 91 %.  We can share the benchmark dataset.
+
+[05:05] Prospect (Dan):  Benchmarks help.  But CFO looks at net rupees, not F1 score.
+
+[05:09] AE:  Understood.  Let’s open the ROI sheet.
+
+[05:12] *screen share: ROI.xlsx*
+
+[05:14] AE:  Row 7 shows coaching efficiency.  Each manager saves 4 hours weekly on call reviews, at ₹2 200 hourly burden rate.  With four managers that’s ₹1.8 L in annual savings.  Row 10 estimates 6 % lift in win rates.  If you closed ₹30 Cr last year, that’s another ₹1.8 Cr in incremental bookings.  Bottom line, you break even at 37 licenses.
+
+[05:41] Prospect (Priya):  Dan, CFO likes payback under six months.  Looks plausible.
+
+[05:46] Prospect (Dan):  Yeah.  Okay, let’s hash the nitty-gritty discount.  110 seats (88 Growth, 22 Pro), three-year term, net 30 payment, 5 % renewal uplift cap, early-termination option with clawback.  What all-in price?
+
+[06:05] Maya:  Calculating… base ARR list ₹2 400 × 22 + ₹1 800 × 88 = ₹2 35 200/mo ≈ ₹28 22 400/yr.  18 % stacked discount → ₹23 14 368/yr.  Over three years, ₹69 43 104.  With pilot logic, first 25 seats billed at start of pilot, rest at production go-live.  We can front-load discount so years 2-3 SDR seats get locked at the same net rate.
+
+[06:41] Prospect (Dan):  Competitor X quoted ₹60 L for three years at 120 seats, unlimited minutes.  You’re about 15 % higher net.
+
+[06:49] AE:  Their quote doesn’t include redaction or Slack or EU hosting.  Add those and you’re ~₹72 L list.  We can build a leveled comparison sheet.
+
+[06:57] Prospect (Dan):  Send it, but we still need headline number parity.
+
+[07:02] Maya:  If we add a 3-month ramp discount—pay 50 % in first quarter—we get effective TCV down to ₹64 L.
+
+[07:09] Prospect (Priya):  That closes most gap.  Dan?
+
+[07:11] Prospect (Dan):  CFO hates ramp discounts; they mess with accrual.  Prefer clean rate but bigger logo discount.
+
+[07:17] AE:  Let’s take a short sidebar.  Maya and I can propose a logo-plus-case-study discount of 15 % and stretch volume to 12 % for year-one commit of 120 seats.  That reaches 20 % net, slightly above policy but we can seek exception.  Renewal uplift capped at 4 %.
+
+[07:37] Prospect (Dan):  That’d put TCV at?
+
+[07:39] Maya:  ₹28 22 400 × 0.80 = ₹22 57 920/yr ⇒ ₹67 73 760 TCV.
+
+[07:46] Prospect (Dan):  Closer.  I’ll push CFO but need a signed quote today to freeze FY25 funds.  Can you turn a DocuSign in two hours?
+
+[07:55] AE:  Yes.  Let’s lock final asks.  Priya?
+
+[07:58] Prospect (Priya):  Technical asks: guarantee Slack early-access by pilot, Hindi diarization GA by Q4.  Those need side-letter “Service Level Release” with penalties.
+
+[08:08] AE:  Done.  We’ll commit to Slack EA by July 15, Hindi GA by Nov 15 with 10 % credit if missed.
+
+[08:16] Prospect (Dan):  One last thing—Competitor Y bundles success hours; your CSM add-on costs.  Fold dedicated CSM into the discount, please.
+
+[08:23] Maya:  Okay, include CSM at no charge for pilot and first renewal cycle; after that we’ll price at ₹1 L/yr but you can opt-out.
+
+[08:32] Prospect (Dan):  Fair.  Net price unchanged?
+
+[08:34] Maya:  Yes—absorbing CSM into margin.
+
+[08:36] Prospect (Dan):  Then we’re good.
+
+[08:38] AE:  Excellent.  Action items: Maya drafts order form with 120 seats (96 Growth, 24 Pro), 20 % net discount, 4 % renewal cap, Slack EA, Hindi GA SLR, dedicated CSM year 0-1, net 30 terms, opt-out clause end of year 1 with clawback.  I’ll loop legal for MSA redlines.
+
+[08:59] Prospect (Priya):  Works.  CC our legal alias on the DocuSign, they’ll skim.
+
+[09:04] Prospect (Dan):  Send the TCO sheet too—CFO will ask.
+
+[09:07] AE:  Will do.  Anything else?
+
+[09:10] Prospect (Priya):  No, thank you.  Good session.
+
+[09:12] AE:  Appreciate the partnership.  We’ll shoot docs over by 16:00 IST.  Talk soon.
+
+[09:17] *Call ends.*
+
+
+
+

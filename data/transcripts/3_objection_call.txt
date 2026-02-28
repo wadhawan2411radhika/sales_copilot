@@ -1,0 +1,130 @@
+[00:00] AE (Jordan):  Good morning, everyone.  Purpose of today’s call is to address security, privacy, and legal concerns so we can move the pilot forward.  On our side I have Elena, our CISO, and Luis, our Sales Engineer.  From your team I see Arjun from Security, Sara from Legal, and Priya from RevOps.  Sound correct?
+
+[00:17] Prospect (Arjun – Security Lead):  Yes, thanks for setting this up.
+
+[00:19] Prospect (Sara – Legal Counsel):  Hi Jordan, looking forward.
+
+[00:22] Prospect (Priya – RevOps Director):  Let’s dive in—lots to cover.
+
+[00:25] AE:  Perfect.  Agenda: (1) Data residency & encryption, (2) Retention & deletion, (3) Sub-processors & compliance, (4) Roadmap clarifications, (5) Next steps.  Elena, take it away.
+
+[00:39] CISO (Elena):  Thanks Jordan.  First, **data residency**.  By default we store all customer data—including raw audio, transcripts, and vector embeddings—in AWS ap-south-1 (Mumbai).  If you enable EU residency, we create a silo in eu-central-1 (Frankfurt) and route all traffic there.  No cross-region replication unless you opt-in for DR.
+
+[01:02] Arjun:  Does DR mean a second copy outside India?
+
+[01:06] Elena:  Only if you enable cross-region.  Otherwise DR remains within the same region using multi-AZ.
+
+[01:12] Arjun:  Good.  **Encryption**?
+
+[01:14] Elena:  AES-256 at rest via AWS KMS customer-managed keys, TLS 1.3 in transit.  Vector indices live in Aurora Postgres with the same KMS keys; embeddings in FAISS are encrypted volume-level and again decrypted in-memory when queried.
+
+[01:33] Sara:  Do you bring your own key (BYOK) or customer-managed key (CMK)?
+
+[01:37] Elena:  We support CMK—your AWS account hosts the key; we assume IAM role to decrypt.  BYOK to our KMS is on the roadmap Q4.
+
+[01:46] Sara:  Excellent.  **Retention**—you said 90 days default?
+
+[01:50] Elena:  Correct.  You can set retention policy per workspace: 30, 60, 90, or “immediate delete after processing.”  Immediate delete purges raw audio once the transcript and embeddings are generated.  Vector fragments can also be purged on request.
+
+[02:05] Arjun:  If we choose 30 days but later need discovery for litigation, can you extend for a single workspace?
+
+[02:12] Elena:  Yes.  We expose an API to override retention for specified call IDs while keeping the global policy.
+
+[02:19] Priya:  That’s handy.  **Sub-processors**?
+
+[02:21] Elena:  We have three: AWS, OpenAI (for embeddings & summary generation), and Sentry (error logging—metadata only, no PII).  Full list is in our DPA Annex B.
+
+[02:32] Sara:  Do you transmit transcripts to OpenAI?
+
+[02:35] Elena:  Only chunked context windows, each ≤2 k tokens, via their Enterprise API with zero-retention option.  Content is not used for model training.
+
+[02:45] Arjun:  What about fallback to local LLM?
+
+[02:48] Luis (SE):  Our product lets you switch to a local Ollama or Llama-CPP model.  In that case no data leaves your VPC.
+
+[02:55] Sara:  Does that affect summary accuracy?
+
+[02:57] Luis:  Slightly—GPT-4o averages 91 % F1 on our conversation-action-item benchmark; phi-3-mini in Ollama is ~83 %.  You can mix: local for PII-heavy calls, OpenAI for the rest.
+
+[03:11] Priya:  Nice flexibility.
+
+[03:13] AE:  Elena, SOC 2?
+
+[03:15] Elena:  We’re SOC 2 Type II.  Latest report issued May 3 2025.  Happy to share under NDA.
+
+[03:22] Arjun:  Please send it.  Pen-test?
+
+[03:25] Elena:  Independent pen-test by NCC Group, completed Feb 2025; remediation complete.  Executive summary is in the security packet.
+
+[03:35] Arjun:  Great.  **PII redaction**—automatic?
+
+[03:38] Luis:  We use regex and a small BERT NER to redact names, phone numbers, emails before storing transcripts.  Redacted tokens replace original in the vector store.  Original raw audio remains encrypted and deleted per retention.
+
+[03:50] Sara:  GDPR DSRs?
+
+[03:52] Elena:  We expose `/delete_user_data` API.  Deletes across raw audio, transcripts, vectors, logs.  SLA 30 days, typical under 24 hrs.
+
+[04:01] Priya:  Switching gears—**roadmap**.  We need Hindi diarization GA by Q3 and Slack push notifications for call summaries.
+
+[04:08] Luis:  Slack push is in GA July 15; Hindi diarization private preview now, GA Oct 30.  We can contractually commit with penalties.
+
+[04:18] Arjun:  What accuracy for Hindi‐English mixed?
+
+[04:21] Luis:  Word-error rate 13 % on internal dataset vs. 9 % mono-English.  Improvements ongoing.
+
+[04:29] Sara:  If accuracy falls below spec, any clawback?
+
+[04:32] AE:  We usually structure a performance SLR—credit of 10 % monthly fee if diarization WER >15 % for two consecutive months.
+
+[04:40] Sara:  Works.
+
+[04:42] Arjun:  One more: sandbox environment?
+
+[04:44] Luis:  Yes, free sandbox with 10 seats, separate data plane; refreshes weekly.
+
+[04:50] Arjun:  Perfect.  **Single Sign-On**?
+
+[04:52] Elena:  SAML 2.0 and OIDC; MFA enforcement optional; SCIM provisioning supported.
+
+[04:58] Priya:  Love it.
+
+[05:00] Arjun:  Let’s discuss logging.  Do you record IP addresses in audit logs?
+
+[05:04] Elena:  Yes—source IP, user ID, action, timestamp.  Retained 365 days, exportable via API.
+
+[05:11] Arjun:  Privacy team may want IP truncation.
+
+[05:13] Elena:  We can hash or truncate on request.
+
+[05:16] Sara:  On the DPA, we need India DPDPA addendum besides GDPR.
+
+[05:20] Elena:  Draft ready.  We include SCC‐like clauses for cross-border flow.
+
+[05:26] AE:  Great.  Let’s recap open items:
+
+  1. Share SOC 2 report and pen-test summary (Elena).  
+  2. Provide DPA with India addendum (Elena).  
+  3. Contractual SLR for Slack (July 15) and Hindi diarization (Oct 30) with 10 % credit clause (Jordan).  
+  4. Priya to schedule IT review of SSO next Tuesday.  
+
+Anything missing?
+
+[05:49] Priya:  Looks complete.
+
+[05:51] Sara:  I’d like sample deletion logs for DSR proof.
+
+[05:54] Elena:  Will attach to security packet.
+
+[05:57] Arjun:  Also need CSA STAR Level 1 questionnaire.
+
+[06:00] Elena:  Already filled—will resend.
+
+[06:03] AE:  Perfect.  Next checkpoint?
+
+[06:06] Priya:  After IT review and doc sign-off, we’ll green-light the 25-seat pilot.
+
+[06:11] AE:  Excellent.  We’ll aim for green light by June 30.  Thank you everyone.
+
+[06:16] *Call ends.*
+
+

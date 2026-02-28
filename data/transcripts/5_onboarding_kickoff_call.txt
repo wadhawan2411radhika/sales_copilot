@@ -1,0 +1,123 @@
+[00:00] AE (Jordan):  Good morning everyone! Excited for this one — this is our official kickoff call. On our side we have Asha, our VP of Customer Success, and Ravi, the implementation engineer assigned to your account. From your side I see Priya, Arjun, and a few new faces?
+
+[00:18] Prospect (Priya – RevOps Director):  Yes — I've brought in Deepak, our Salesforce admin, and Neeta, who'll be the internal champion for rep adoption.
+
+[00:27] AE:  Perfect. I'll hand it to Asha to run the session.
+
+[00:31] Asha (VP CS):  Thanks Jordan. Agenda today: (1) confirm go-live checklist, (2) Salesforce OAuth setup with Deepak, (3) SSO configuration, (4) rep onboarding plan, (5) success metrics we'll track together. Should take about 60 minutes. Sound good?
+
+[00:48] Prospect (Priya):  Works for us.
+
+[00:51] Asha:  Great. First — sandbox. Ravi, can you confirm it's live?
+
+[00:55] Ravi (Implementation Engineer):  Yes, sandbox is provisioned at your subdomain. You should have received the invite email about 20 minutes ago. It has 10 seats, resets every Sunday.
+
+[01:05] Prospect (Arjun – Security Lead):  Got the email. One question — is the sandbox on the same data plane as production?
+
+[01:11] Ravi:  No, completely isolated. Separate AWS account, no shared resources. Data you upload to sandbox never touches production indices.
+
+[01:19] Prospect (Arjun):  Good. That was a concern I forgot to raise in the negotiation call.
+
+[01:24] Asha:  Noted. Deepak, let's get Salesforce connected. Have you generated the OAuth credentials from your Salesforce org?
+
+[01:31] Prospect (Deepak – Salesforce Admin):  Yes, I have the client ID and secret here. It's a read-only connected app as requested.
+
+[01:38] Ravi:  Perfect. Go ahead and paste those into the integrations tab — I'll walk you through. Select Salesforce, click OAuth 2.0, and enter the credentials. You'll get a redirect to Salesforce to approve the connection.
+
+[01:52] Prospect (Deepak):  Done. It's asking for approval now.
+
+[01:55] Ravi:  Approve it. Give it 10 seconds to sync. You should see your Salesforce object list appear.
+
+[02:05] Prospect (Deepak):  I can see Opportunities, Contacts, and Tasks. Looks good.
+
+[02:09] Ravi:  Great. Now map the "Next Steps" field from our action items to your custom Salesforce field — looks like you have a field called "AE_Notes__c"?
+
+[02:18] Prospect (Deepak):  Yes, that's the one managers check daily.
+
+[02:21] Ravi:  Perfect mapping. Action items from every call will auto-populate there within five minutes of call end.
+
+[02:28] Prospect (Priya):  That's exactly what we needed. Managers will love that.
+
+[02:32] Asha:  Next — SSO. Arjun, your IT team sent over the SAML metadata XML yesterday. Ravi has loaded it.
+
+[02:39] Ravi:  Correct. SSO is configured. Arjun, can you test with your credentials?
+
+[02:44] Prospect (Arjun):  Testing now... logged in via Okta successfully. No password prompt.
+
+[02:49] Ravi:  SCIM provisioning is also live — new hires added to your Okta group "SalesCopilot_Users" will be auto-provisioned within 15 minutes.
+
+[02:58] Prospect (Arjun):  That removes a huge manual overhead for our IT team.
+
+[03:03] Asha:  Now onboarding. Neeta, you'll be the internal champion — what's your current plan for rep rollout?
+
+[03:10] Prospect (Neeta – Internal Champion):  We were thinking a phased rollout. Start with 25 reps in pod one — our enterprise team. If adoption is good in 30 days, expand to pods two and three.
+
+[03:22] Asha:  Smart. We'll set up a "Top Calls" playlist for your enterprise team by end of this week — five curated discovery calls with commentary. Reps spend 30 minutes watching before their first live call. We've seen this cut ramp time by three weeks.
+
+[03:37] Prospect (Neeta):  Can we add our own calls to the playlist?
+
+[03:40] Ravi:  Yes. Any manager can flag a call as "featured" and it appears in the playlist immediately. You can also add written commentary per clip.
+
+[03:49] Prospect (Neeta):  Love that. Our top AE Ramesh has some brilliant discovery calls — I want every new hire watching those.
+
+[03:56] Asha:  Flag Ramesh's calls and we'll help you annotate them this week.
+
+[04:01] Prospect (Priya):  What about the Hindi diarization? Our BDR team does most calls in Hindi.
+
+[04:07] Ravi:  Hindi diarization is in private preview now — GA is October 30th as committed. I'll enable private preview for your BDR pod today if you want to start testing early.
+
+[04:17] Prospect (Priya):  Yes please. Even 80% accuracy is better than nothing for them right now.
+
+[04:22] Ravi:  Done — I'll enable it after this call and send instructions.
+
+[04:27] Asha:  Now success metrics. We track three things in our quarterly business review: (1) adoption rate — target 80% of seats active weekly, (2) coaching hours saved per manager per week — our benchmark is 4 hours, (3) deal health accuracy — how often our risk flags match actual deal outcomes. What metrics matter most to your leadership?
+
+[04:49] Prospect (Priya):  Honestly, our CFO Raghav will ask about win rate lift. He signed off based on the 6% uplift projection.
+
+[04:57] Asha:  We'll set a baseline from your Salesforce closed-won data this week, then measure at 90 days. We've seen some customers hit the 6% mark as early as 60 days once coaching becomes consistent.
+
+[05:08] Prospect (Priya):  That would be a great story to tell internally.
+
+[05:12] Asha:  One more thing — Slack push notifications. Jordan committed to GA by July 15th. Ravi, status?
+
+[05:19] Ravi:  On track. Early access is available now. Want me to enable it for your workspace today?
+
+[05:24] Prospect (Priya):  Yes — our managers live in Slack. If they get a call summary there, adoption will be instant.
+
+[05:30] Ravi:  I'll need your Slack workspace ID and a bot token with channels:read and chat:write permissions.
+
+[05:37] Prospect (Deepak):  I can generate that — give me two minutes.
+
+[05:40] Ravi:  Take your time.
+
+[05:55] Prospect (Deepak):  Done — I've sent it to your implementation email.
+
+[05:59] Ravi:  Got it. Connected. Your managers will now get a Slack DM within five minutes of every call ending with the AI summary and action items.
+
+[06:08] Prospect (Neeta):  Can we choose which channel? I'd rather it post to a shared team channel so everyone sees it.
+
+[06:14] Ravi:  Absolutely — you can set it to a channel instead of DM. Just specify the channel name in the integration settings.
+
+[06:21] Prospect (Neeta):  I'll set it to #sales-coaching.
+
+[06:24] Asha:  Perfect. Let's close with action items. Ravi?
+
+[06:27] Ravi:  Sure. On our side: enable Hindi diarization for BDR pod today, build Top Calls playlist by Friday, share SCIM guide via email, confirm Slack channel config with Neeta. On your side: Deepak to verify Salesforce sync with a test call by Wednesday, Arjun to confirm SCIM with one test user, Neeta to flag five Ramesh calls for the playlist.
+
+[06:50] Prospect (Priya):  Sounds right. One thing I forgot — we have a team offsite on July 10th. Can we schedule the first onsite enablement session that day?
+
+[06:59] Asha:  Absolutely — that's included in your contract. I'll send a calendar invite for July 10th and coordinate with your team on the agenda.
+
+[07:07] Prospect (Priya):  Perfect. This has been a great start.
+
+[07:10] AE (Jordan):  Really glad to hear it. We're committed to making this a success. Asha and Ravi are your main contacts from here — I'll check in at the 30-day mark.
+
+[07:20] Prospect (Arjun):  Quick last thing — the security doc package Elena promised post-negotiation. I still haven't received the CSA STAR questionnaire.
+
+[07:28] AE:  On it — I'll follow up with Elena today and get it to you by EOD.
+
+[07:33] Prospect (Arjun):  Thank you.
+
+[07:35] Asha:  Great session everyone. Next touchpoint is a 2-week check-in — I'll send the invite. Talk soon!
+
+[07:42] *Call ends.*
